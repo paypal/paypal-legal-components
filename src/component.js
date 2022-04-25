@@ -6,6 +6,13 @@ import type { LegalConfigInput, ContentConfig } from './types';
 import { buildContent, FPTI_KEY } from './util';
 
 export function Legal (options : LegalConfigInput) : Object {
+
+    /* Export Constants for Referencing by the Client*/
+    Legal.ERROR_CODE = {
+        PAYMENT_SOURCE_INFO_CANNOT_BE_VERIFIED: 'PAYMENT_SOURCE_INFO_CANNOT_BE_VERIFIED',
+        PAYMENT_SOURCE_DECLINED_BY_PROCESSOR:   'PAYMENT_SOURCE_DECLINED_BY_PROCESSOR'
+    };
+
     return {
         render(container) {
 
