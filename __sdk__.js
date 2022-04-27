@@ -2,10 +2,7 @@
 /* eslint import/no-commonjs: 0 */
 
 module.exports = {
-
     'legal': {
-        entry: './src/index',
-        
-        staticNamespace: '__legal__'
+        entry: './src/index'
     }
 };
