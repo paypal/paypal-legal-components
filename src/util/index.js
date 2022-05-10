@@ -1,6 +1,6 @@
 /* @flow */
 import type { ContentConfig } from '../types';
-import { PayUponInvoice } from '../constants';
+import { PayUponInvoice, boleto } from '../constants';
 
 export function buildContent(options : ContentConfig) : string {
     let content = '';
@@ -18,6 +18,12 @@ export function buildContent(options : ContentConfig) : string {
             );
         }
 
+        break;
+    }
+    case 'boleto': {
+        content = boleto?.LEGAL_TEXT?.[options.legalLocale]?.(
+            paypalPolicyLink
+        );
         break;
     }
     default: {
