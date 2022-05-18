@@ -50,7 +50,9 @@ export function Legal (options : LegalConfigInput) : Object {
 
 Legal.FUNDING = {
     PAY_UPON_INVOICE: 'PayUponInvoice',
-    BOLETO:           'boleto'
+    BOLETO:           'boleto',
+    BOLETOBANCARIO:   'boletobancario'
+
 };
 
 /* Export Constants for Referencing by the Client*/
