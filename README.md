@@ -64,7 +64,7 @@ npm run release
 
 <script>
 paypal.Legal({
-        fundingSource: paypal.FUNDING.PAY_UPON_INVOICE
+        fundingSource: paypal.Legal.FUNDING.PAY_UPON_INVOICE
         })
       .render("#paypal-legal-container");
 </script>
