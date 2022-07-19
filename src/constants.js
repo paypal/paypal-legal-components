@@ -16,15 +16,19 @@ export const PayUponInvoice : Object = {
             'en-DE': `It is not possible to use the selected payment method. This decision is based on automated data processing. You can find further information in the <a href="https://www.ratepay.com/en/ratepay-data-privacy-statement/" title="external link" target="_blank" rel="noopener noreferrer">Ratepay Data Privacy Statement</a> or you can contact Ratepay using this <a href="https://www.ratepay.com/en/contact/" title="external link" target="_blank" rel="noopener noreferrer">contact form</a>.`,
             'de-DE': `Die gewählte Zahlungsart kann nicht genutzt werden. Diese Entscheidung basiert auf einem automatisierten Datenverarbeitungsverfahren. Weitere Informationen finden Sie in den Ratepay <a href="https://www.ratepay.com/legal-payment-dataprivacy/?lang=de" title="external link" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen</a> oder nutzen Sie das Ratepay <a href="https://www.ratepay.com/kontakt/" title="external link" target="_blank" rel="noopener noreferrer">Kontaktformular</a>.`
         }
-    }
+    },
+    DEFAULT_LANGUAGE: 'en-DE',
+    BUYER_COUNTRY:          'DE'
 };
 
 
-export const boleto : Object = {
+export const boletobancario : Object = {
     LEGAL_TEXT: {
         'en-BR': (paypalPolicyLink : string) =>
             `By clicking on the button, you agree that your information will be collected according to <a rel='noopener noreferrer' target='_blank' href='${ paypalPolicyLink }'>PayPal's Privacy Statement</a>`,
         'pt-BR': (paypalPolicyLink : string) =>
             `Suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${ paypalPolicyLink }'>Privacidade do PayPal</a>`
-    }
+    },
+    DEFAULT_LANGUAGE: 'en-BR',
+    BUYER_COUNTRY:          'BR'
 };

@@ -1,9 +1,9 @@
 /* @flow */
 
-import { getClientID, getLogger, getBuyerCountry, getLocale } from '@paypal/sdk-client/src';
+import { getClientID, getLogger } from '@paypal/sdk-client/src';
 
 import type { LegalConfigInput, ContentConfig } from './types';
-import { buildContent, FPTI_KEY } from './util';
+import { buildContent, FPTI_KEY, getBuyerCountryFromFundingSource, getLegalLocale } from './util';
 
 export function Legal (options : LegalConfigInput) : Object {
 
@@ -13,11 +13,10 @@ export function Legal (options : LegalConfigInput) : Object {
             if (!options.fundingSource) {
                 throw new Error(`Expected options.fundingSource`);
             }
-
             
-            const locale = getLocale() || { country: 'DE', lang: 'de' };
-            const legalLocale = `${ locale.lang }-${ locale.country }`;
-            const buyerCountry = getBuyerCountry() || locale.country;
+    
+            const legalLocale = getLegalLocale();
+            const buyerCountry = getBuyerCountryFromFundingSource(options.fundingSource);
             
             const contentInput : ContentConfig = {
                 ...options,
@@ -26,8 +25,8 @@ export function Legal (options : LegalConfigInput) : Object {
             };
         
             const metadata = {
-                locale:       getLocale(),
-                buyerCountry: getBuyerCountry()
+                locale:       legalLocale,
+                buyerCountry
             };
 
             const el = document.querySelector(container);
@@ -38,7 +37,7 @@ export function Legal (options : LegalConfigInput) : Object {
             
             el.innerHTML = buildContent(contentInput);
             getLogger().info(JSON.stringify(metadata));
-            getLogger().info('PUI Legal Component Loaded').track({
+            getLogger().info('Legal Component Loaded').track({
                 [FPTI_KEY.CLIENT_ID]: getClientID(),
                 [FPTI_KEY.PAGE_TYPE]: options.fundingSource
 
