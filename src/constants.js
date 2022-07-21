@@ -17,7 +17,7 @@ export const PayUponInvoice : Object = {
             'de-DE': `Die gewählte Zahlungsart kann nicht genutzt werden. Diese Entscheidung basiert auf einem automatisierten Datenverarbeitungsverfahren. Weitere Informationen finden Sie in den Ratepay <a href="https://www.ratepay.com/legal-payment-dataprivacy/?lang=de" title="external link" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen</a> oder nutzen Sie das Ratepay <a href="https://www.ratepay.com/kontakt/" title="external link" target="_blank" rel="noopener noreferrer">Kontaktformular</a>.`
         }
     },
-    DEFAULT_LANGUAGE: 'en-DE',
+    DEFAULT_LOCALE: 'en-DE',
     BUYER_COUNTRY:          'DE'
 };
 
@@ -29,6 +29,6 @@ export const boletobancario : Object = {
         'pt-BR': (paypalPolicyLink : string) =>
             `Suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${ paypalPolicyLink }'>Privacidade do PayPal</a>`
     },
-    DEFAULT_LANGUAGE: 'en-BR',
+    DEFAULT_LOCALE: 'en-BR',
     BUYER_COUNTRY:          'BR'
 };
