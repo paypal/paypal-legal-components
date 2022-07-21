@@ -1,5 +1,5 @@
 /* @flow */
-type FundingSource = "PayUponInvoice" | "boleto";
+type FundingSource = "PayUponInvoice" | "boletobancario";
 type ErrorCode = "PAYMENT_SOURCE_INFO_CANNOT_BE_VERIFIED" | "PAYMENT_SOURCE_DECLINED_BY_PROCESSOR";
 
 export type ContentConfig = {|

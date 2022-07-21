@@ -2,7 +2,7 @@
 
 describe('Should render legal text', () => {
 
-    it('Should create an instance of the client and render legal text for payment', () => {
+    it('Should create an instance of the client and render legal text for PayUponInvoice payment', () => {
 
         const body = document.body;
         if (!body) {
@@ -18,6 +18,27 @@ describe('Should render legal text', () => {
         }).render('#paypal-legal-container');
 
 
+        if (!legalContainer.textContent) {
+            throw new Error(`Expected Legal Text Container to have text`);
+        }
+
+        body.removeChild(legalContainer);
+    });
+
+    it('Should create an instance of the client and render legal text for boletobancario payment', () => {
+
+        const body = document.body;
+        if (!body) {
+            throw new Error(`Expected document.body to be present`);
+        }
+
+        const legalContainer = document.createElement('div');
+        legalContainer.id = 'paypal-legal-container';
+        body.appendChild(legalContainer);
+
+        window.paypal.Legal({
+            fundingSource: 'boletobancario'
+        }).render('#paypal-legal-container');
         if (!legalContainer.textContent) {
             throw new Error(`Expected Legal Text Container to have text`);
         }

@@ -1,39 +1,57 @@
+
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable import/namespace */
+/* eslint-disable import/no-namespace */
 /* @flow */
+
+import { getLocale } from '@paypal/sdk-client/src';
+
 import type { ContentConfig } from '../types';
-import { PayUponInvoice, boleto } from '../constants';
+import * as LegalConstants from '../constants';
+
 
 export function buildContent(options : ContentConfig) : string {
     let content = '';
     const paypalPolicyLink = `https://www.paypal.com/${ options.buyerCountry }/webapps/mpp/ua/privacy-full?locale.x=${ options.legalLocale }`;
-    switch (options.fundingSource) {
-    case 'PayUponInvoice': {
-        if (options.errorCode) {
-            content =
-          PayUponInvoice?.ERROR_MESSAGES?.[options.errorCode]?.[
-              options.legalLocale
-          ];
-        } else {
-            content = PayUponInvoice?.LEGAL_TEXT?.[options.legalLocale]?.(
-                paypalPolicyLink
-            );
-        }
-
-        break;
-    }
-    case 'boleto': {
-        content = boleto?.LEGAL_TEXT?.[options.legalLocale]?.(
+    if (options.errorCode) {
+        content =
+        LegalConstants[options.fundingSource]?.ERROR_MESSAGES?.[options.errorCode]?.[
+            options.legalLocale
+         
+        ] ||  LegalConstants[options.fundingSource]?.ERROR_MESSAGES?.[options.errorCode]?.[
+             
+            LegalConstants[options.fundingSource]?.DEFAULT_LANGUAGE
+        ];
+    } else {
+         
+        content = LegalConstants[options.fundingSource]?.LEGAL_TEXT?.[options.legalLocale]?.(
+            paypalPolicyLink
+         
+        ) || LegalConstants[options.fundingSource]?.LEGAL_TEXT?.[LegalConstants[options.fundingSource]?.DEFAULT_LANGUAGE]?.(
             paypalPolicyLink
         );
-        break;
-    }
-    default: {
-        break;
-    }
     }
     return content || '';
 }
 
+export function getBuyerCountryFromFundingSource(fundingSource : string) : string {
+     
+    const buyerCountry = LegalConstants[fundingSource]?.BUYER_COUNTRY || '';
+    return buyerCountry;
+}
+
+/**
+ * This function defaults the legal text language locale based on
+ * payment option and overrides based on the user preferences
+ * @param {*} fundingOption
+ * @returns
+ */
+export function getLegalLocale() : string  {
+    const locale = getLocale();
+    return `${ locale.lang }-${ locale.country }`;
+
+}
 export const FPTI_KEY = {
     CLIENT_ID: 'client_id',
-    PAGE_TYPE: 'pp_placement'
+    PAGE_TYPE: 'legal_component'
 };
