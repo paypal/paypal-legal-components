@@ -20,14 +20,14 @@ export function buildContent(options : ContentConfig) : string {
          
         ] ||  LegalConstants[options.fundingSource]?.ERROR_MESSAGES?.[options.errorCode]?.[
              
-            LegalConstants[options.fundingSource]?.DEFAULT_LANGUAGE
+            LegalConstants[options.fundingSource]?.DEFAULT_LOCALE
         ];
     } else {
          
         content = LegalConstants[options.fundingSource]?.LEGAL_TEXT?.[options.legalLocale]?.(
             paypalPolicyLink
          
-        ) || LegalConstants[options.fundingSource]?.LEGAL_TEXT?.[LegalConstants[options.fundingSource]?.DEFAULT_LANGUAGE]?.(
+        ) || LegalConstants[options.fundingSource]?.LEGAL_TEXT?.[LegalConstants[options.fundingSource]?.DEFAULT_LOCALE]?.(
             paypalPolicyLink
         );
     }
