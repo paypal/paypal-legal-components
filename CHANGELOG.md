@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/paypal/paypal-legal-components/compare/v1.1.2...v1.1.3) (2022-07-27)
+
+
+### Bug Fixes
+
+* change buyerCountry determination logic ([#9](https://github.com/paypal/paypal-legal-components/issues/9)) ([03ecdda](https://github.com/paypal/paypal-legal-components/commit/03ecddaccce731c9099001a30f0963e2dd5c3846))
+
+
+* **docs:** update readme badges ([#6](https://github.com/paypal/paypal-legal-components/issues/6)) ([b12287b](https://github.com/paypal/paypal-legal-components/commit/b12287b6d220257bf18c9a465752b548007cb2f9))
+* update the interface example for FUNDING Constant ([#7](https://github.com/paypal/paypal-legal-components/issues/7)) ([f89f72f](https://github.com/paypal/paypal-legal-components/commit/f89f72f91504ecc1b0080ceea6809ae94e188b81))
+
 ### [1.1.2](https://github.com/paypal/paypal-legal-components/compare/v1.1.1...v1.1.2) (2022-05-19)
 
 ### [1.1.1](https://github.com/paypal/paypal-legal-components/compare/v1.1.0...v1.1.1) (2022-05-19)
