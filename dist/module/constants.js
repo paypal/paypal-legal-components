@@ -23,8 +23,8 @@ const PayUponInvoice = {
 exports.PayUponInvoice = PayUponInvoice;
 const boletobancario = {
   LEGAL_TEXT: {
-    'en-BR': paypalPolicyLink => `By clicking on the button, you agree that your information will be collected according to <a rel='noopener noreferrer' target='_blank' href='${paypalPolicyLink}'>PayPal's Privacy Statement</a>`,
-    'pt-BR': paypalPolicyLink => `Suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${paypalPolicyLink}'>Privacidade do PayPal</a>`
+    'en-BR': paypalPolicyLink => `By choosing this payment option you agree that your information will be collected according to <a rel='noopener noreferrer' target='_blank' href='${paypalPolicyLink}'>PayPal's Privacy Statement</a>`,
+    'pt-BR': paypalPolicyLink => `Ao clicar neste botão, você concorda que as suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${paypalPolicyLink}'>Privacidade do PayPal</a>`
   },
   DEFAULT_LOCALE: 'en-BR',
   BUYER_COUNTRY: 'BR'
