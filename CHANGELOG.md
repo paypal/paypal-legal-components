@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/paypal/paypal-legal-components/compare/v1.1.3...v1.2.0) (2022-08-15)
+
+
+### Features
+
+* **lib:** added distribution webpack for lib use case ([#10](https://github.com/paypal/paypal-legal-components/issues/10)) ([c82c2fb](https://github.com/paypal/paypal-legal-components/commit/c82c2fbf786e063f1b9156e9b37d29bea8e6ea56))
+
 ### [1.1.3](https://github.com/paypal/paypal-legal-components/compare/v1.1.2...v1.1.3) (2022-07-27)
 
 
