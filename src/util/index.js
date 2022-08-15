@@ -9,10 +9,18 @@ import { getLocale } from '@paypal/sdk-client/src';
 import type { ContentConfig } from '../types';
 import * as LegalConstants from '../constants';
 
+export function getBuyerCountryFromFundingSource(fundingSource : string) : string {
+     
+    const buyerCountry = LegalConstants[fundingSource]?.BUYER_COUNTRY || '';
+    return buyerCountry;
+}
 
 export function buildContent(options : ContentConfig) : string {
     let content = '';
-    const paypalPolicyLink = `https://www.paypal.com/${ options.buyerCountry }/webapps/mpp/ua/privacy-full?locale.x=${ options.legalLocale }`;
+    const buyerCountry = options.buyerCountry || getBuyerCountryFromFundingSource(options.fundingSource);
+    const legalLocale = options.legalLocale ||  LegalConstants[options.fundingSource]?.DEFAULT_LOCALE;
+
+    const paypalPolicyLink = `https://www.paypal.com/${ buyerCountry }/webapps/mpp/ua/privacy-full?locale.x=${ legalLocale }`;
     if (options.errorCode) {
         content =
         LegalConstants[options.fundingSource]?.ERROR_MESSAGES?.[options.errorCode]?.[
@@ -34,11 +42,6 @@ export function buildContent(options : ContentConfig) : string {
     return content || '';
 }
 
-export function getBuyerCountryFromFundingSource(fundingSource : string) : string {
-     
-    const buyerCountry = LegalConstants[fundingSource]?.BUYER_COUNTRY || '';
-    return buyerCountry;
-}
 
 /**
  * This function defaults the legal text language locale based on
