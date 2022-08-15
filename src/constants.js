@@ -25,9 +25,9 @@ export const PayUponInvoice : Object = {
 export const boletobancario : Object = {
     LEGAL_TEXT: {
         'en-BR': (paypalPolicyLink : string) =>
-            `By clicking on the button, you agree that your information will be collected according to <a rel='noopener noreferrer' target='_blank' href='${ paypalPolicyLink }'>PayPal's Privacy Statement</a>`,
+            `By choosing this payment option you agree that your information will be collected according to <a rel='noopener noreferrer' target='_blank' href='${ paypalPolicyLink }'>PayPal's Privacy Statement</a>`,
         'pt-BR': (paypalPolicyLink : string) =>
-            `Suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${ paypalPolicyLink }'>Privacidade do PayPal</a>`
+            `Ao clicar neste botão, você concorda que as suas informações serão coletadas de acordo com a Declaração de <a target='_blank' rel='noopener noreferrer' href='${ paypalPolicyLink }'>Privacidade do PayPal</a>`
     },
     DEFAULT_LOCALE: 'en-BR',
     BUYER_COUNTRY:          'BR'
