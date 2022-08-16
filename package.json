@@ -1,6 +1,6 @@
 {
   "name": "@paypal/legal-components",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A PayPal Legal Messaging Library to display Legal Content on Merchant Websites",
   "main": "index.js",
   "scripts": {

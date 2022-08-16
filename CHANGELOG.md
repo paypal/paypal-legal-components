@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/paypal/paypal-legal-components/compare/v1.2.1...v1.2.2) (2022-08-16)
+
+
+* simplify bundle content ([#12](https://github.com/paypal/paypal-legal-components/issues/12)) ([2fbfd8e](https://github.com/paypal/paypal-legal-components/commit/2fbfd8e56fe3a04c941a3f7f546722ea09206db7))
+
 ### [1.2.1](https://github.com/paypal/paypal-legal-components/compare/v1.2.0...v1.2.1) (2022-08-15)
 
 
