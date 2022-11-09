@@ -4,7 +4,7 @@
 /* eslint import/no-nodejs-modules: off */
 
 
-import { getWebpackConfig } from '@krakenjs/grumbler-scripts/config/webpack.config';
+import { getWebpackConfig } from "@krakenjs/webpack-config-grumbler";
 
 const FILE_NAME = 'index';
 const MODULE_NAME = 'paypal-legal-components';
