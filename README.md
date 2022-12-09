@@ -1,5 +1,4 @@
-PayPal JS SDK Legal Messaging Component
-----------------------------------
+## PayPal JS SDK Legal Messaging Component
 
 [![build status][build-badge]][build]
 [![code coverage][coverage-badge]][coverage]
@@ -16,6 +15,7 @@ PayPal JS SDK Legal Messaging Component
 [license]: https://github.com/paypal/paypal-legal-components/blob/main/LICENSE
 
 PayPal JS SDK Legal Component to Display Legal Messages for various Payment Methods
+
 ### Quick start
 
 See [src/index.js](./src/index.js)
@@ -56,19 +56,18 @@ npm run release
 ### Integration
 
 ```html
-
 <script src="https://www.paypal.com/sdk/js?client-id=test&components=legal"></script>
 
 <!-- Place the container div right above the final Checkout Button -->
 <div id="paypal-legal-container"></div>
 
 <script>
-paypal.Legal({
-        fundingSource: paypal.Legal.FUNDING.PAY_UPON_INVOICE
-        })
-      .render("#paypal-legal-container");
+  paypal
+    .Legal({
+      fundingSource: paypal.Legal.FUNDING.PAY_UPON_INVOICE,
+    })
+    .render("#paypal-legal-container");
 </script>
-
 ```
 
 ### Hosted Example
