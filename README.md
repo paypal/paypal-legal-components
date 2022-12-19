@@ -5,7 +5,7 @@
 [![npm version][version-badge]][package]
 [![apache license][license-badge]][license]
 
-[build-badge]: https://img.shields.io/github/workflow/status/paypal/paypal-legal-components/build?logo=github&style=flat-square
+[build-badge]: https://img.shields.io/github/actions/workflow/status/paypal/paypal-legal-components/main.yml?branch=main&logo=github&style=flat-square
 [build]: https://github.com/paypal/paypal-legal-components/actions?query=workflow%3Abuild
 [coverage-badge]: https://img.shields.io/codecov/c/github/paypal/paypal-legal-components.svg?style=flat-square
 [coverage]: https://codecov.io/github/paypal/paypal-legal-components/
